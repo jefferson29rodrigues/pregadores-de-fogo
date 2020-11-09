@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Pregadores de Fogo</title>
+</head>
+<body>
+    <header>
+        <div id="wrapper" class="video">
+            <h1>Pregadores de Fogo</h1>
+        </div>
+    </header>
+
+    <section class="cards">
+
+        <div class="card" id="carvalhoJr">
+
+            <div class="card__image-container {{ 'featured-wrapper' if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card__content">
+                <p>{{item.title}}</p>
+            </div>
+
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="card" id="elsonDeAssis">
+
+            <div class="card__image-container {{ 'featured-wrapper' if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card__content">
+                <p>{{item.title}}</p>
+            </div>
+
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="card" id="marcoFeliciano">
+
+            <div class="card__image-container {{ 'featured-wrapper' if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card__content">
+                <p>{{item.title}}</p>
+            </div>
+
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="card" id="{{item.id}}">
+
+            <div class="card__image-container {{ 'featured-wrapper' if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card__content">
+                <p>{{item.title}}</p>
+            </div>
+
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="card" id="{{item.id}}">
+
+            <div class="card__image-container {{ 'featured-wrapper' if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card__content">
+                <p>{{item.title}}</p>
+            </div>
+
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
+            </div>
+
+        </div>
+
+        <div class="card" id="{{item.id}}">
+
+            <div class="card__image-container {{ 'featured-wrapper' if item.featured }}">
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card__content">
+                <p>{{item.title}}</p>
+            </div>
+
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <p class="card__price">{{item.price}}</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--<section class="cards">
+        <div class="card">
+            <div class="video-iframe">
+                <iframe 
+                    src="https://www.youtube.com/embed/TtWnaV5DkU8" 
+                    frameborder="0"
+                    width="500"
+                    height="300"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="card__info">
+                <h2 >Pastor Marco Feliciano</h2>
+                <p class="card__price">ICABÔ, FOI-SE A GLÓRIA DE DEUS</p>
+            </div>
+        </div>
+    </section>-->
+
+
+    <script src="script.js"></script>
+</body>
+</html>
