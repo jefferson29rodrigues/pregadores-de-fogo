@@ -8,7 +8,7 @@ app.use(express.json());
 
 const customers = [];
 
-
+// Para criar conta - validando CPF
 app.post('/account', (request,response) => {
     const { cpf, name } = request.body;
     const customerAlreadyExists = customers.some(
@@ -28,5 +28,14 @@ app.post('/account', (request,response) => {
 
     response.status(201).send("Deu certo!");
 });
+
+// Para buscar extrato bancario
+app.get('/statement/:cpf', (request, response) => {
+    const { cpf } = request.params;
+
+    const customer = customers.find(customer => customer.cpf === cpf);
+
+    return response.json(customer.statement);
+})
 
 app.listen(3333);
