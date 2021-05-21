@@ -8,6 +8,11 @@ app.use(express.json());
 
 const customers = [];
 
+// Middleware
+function verifyIfExistsAccountCPF(request, response, next) {
+
+}
+
 // Para criar conta - validando CPF
 app.post('/account', (request,response) => {
     const { cpf, name } = request.body;
