@@ -10,7 +10,17 @@ const customers = [];
 
 // Middleware
 function verifyIfExistsAccountCPF(request, response, next) {
+    const { cpf } = request.headers;
 
+    const customer = customers.find(customer => customer.cpf === cpf);
+       
+    if (!customer) {
+        return response.json({ error: "Customer not found!" });
+    }
+
+    request.customer = customer;
+
+    return next();
 }
 
 // Para criar conta - validando CPF
@@ -34,15 +44,12 @@ app.post('/account', (request,response) => {
     response.status(201).send("Deu certo!");
 });
 
+// app.use(verifyIfExistsAccountCPF);
+
 // Para buscar extrato bancario
-app.get('/statement', (request, response) => {
-    const { cpf } = request.headers;
+app.get('/statement', verifyIfExistsAccountCPF, (request, response) => {
 
-    const customer = customers.find(customer => customer.cpf === cpf);
-
-    if (!customer) {
-        return response.json({ error: "Customer not found!" });
-    }
+    const { customer } = request;
 
     return response.json(customer.statement);
 })
